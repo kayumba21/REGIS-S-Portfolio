@@ -30,7 +30,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  
+
 }
 .container {
   padding-left: 15px;
@@ -43,7 +43,7 @@ ul {
 
 /* Start Landing Page */
 .landing-page header {
-  min-height: 100px;
+  min-height: 60px;
   display: flex;
 }
 
@@ -77,6 +77,12 @@ ul {
   cursor: pointer;
   transition: .3s;
 }
+
+#logo {
+    width: 180px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 10px;
@@ -86,7 +92,7 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  
+
 }
 input[type=submit] {
   border: 0;
@@ -103,7 +109,7 @@ input[type=submit] {
   padding: 20px;
   color: #F2F2F2;
 }
-.image grid { 
+.image grid {
 margin: flex;
 }
 .landing-page header .links li:last-child {
