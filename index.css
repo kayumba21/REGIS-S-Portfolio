@@ -119,14 +119,40 @@ margin: flex;
   background-color: #424A59;
 }
 
+/* General Link Styles */
 .links li a {
-  color: #f2f2f2;
-  transition: color 0.3s;
+  color: #f2f2f2; /* Light text color for readability */
+  text-decoration: none; /* Removes underline */
+  font-size: 1.1em; /* Increased font size */
+  transition: color 0.3s, background-color 0.3s; /* Smooth color transition */
+  background-color: transparent; /* Removes background color */
+  border-radius: 0; /* Removes border radius */
+  width: auto; /* Adjusts width to fit content */
+  height: auto; /* Adjusts height to fit content */
+  padding: 5px 10px; /* Adds padding for better click area */
+  transform: translateY(-5px); /* Lift on hover */
 }
 
 .links li a:hover {
   color: #ffa726; /* Amber color on hover */
+  background-color: #292929; /* Subtle background color on hover */
+  border-radius: 5px; /* Slightly rounded corners on hover */
 }
+
+/* Download CV Button Styles */
+.links li a.btn-primary {
+  color: #f2f2f2; /* Light text color for readability */
+  background-color: #424A59; /* Blueish background color */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px; /* More padding for a button-like appearance */
+  transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
+}
+
+.links li a.btn-primary:hover {
+  color: #ffa726; /* Amber text color on hover */
+  transform: translateY(-5px); /* Lift on hover */
+}
+
 
 /* Landing Page Content */
 .landing-page .content .container {
@@ -166,64 +192,127 @@ margin: flex;
   max-width:  700px;
 }
 
-/* Footer Styles */
+/* General Footer Styles */
 .footer {
-  background: #1e1e24;
-  padding: 15px 0; /* Adjusted padding to reduce height */
-  font-family: 'Play', sans-serif;
-  text-align: center;
-  color: #f2f2f2;
+  background-color: #1e1e24; /* Dark background for contrast */
+  color: #f2f2f2; /* Light text color for readability */
+  padding: 20px 0;
+  text-align: center; /* Centers content */
 }
 
 .footer .row {
-  margin: 0.5% 0; /* Adjusted margin to reduce spacing between rows */
-  padding: 0.3% 0; /* Adjusted padding to reduce spacing between rows */
-  font-size: 0.7em; /* Adjusted font size to reduce text size */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+  flex-wrap: wrap; /* Allows icons to wrap on smaller screens */
+  margin: 0 auto;
+  max-width: 600px; /* Limit the width of the row for better alignment */
 }
 
-
 .footer .row a {
-  text-decoration: none;
-  color: #f2f2f2;
-  transition: color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Adjust icon size */
+  height: 50px;
+  border-radius: 50%; /* Makes icons circular */
+  background-color: #292929; /* Subtle contrast behind icons */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth hover effect */
 }
 
 .footer .row a:hover {
-  color: #ffa726; /* Amber color on hover */
+  background-color: #ffa726; /* Amber hover effect */
+  transform: translateY(-5px); /* Lift on hover */
 }
 
-.footer .row ul {
-  width: 100%;
+.footer .row a svg {
+  height: 24px; /* Adjusts the size of the SVG icons */
+  fill: #f2f2f2; /* Icon color */
+  transition: fill 0.3s; /* Smooth color transition */
 }
 
-.footer .row ul li {
-  display: inline-block;
-  margin: 0 20px;
+.footer .row a:hover svg {
+  fill: #1e1e24; /* Changes icon color on hover */
 }
 
-.footer .row a i {
-  font-size: 3em;
-  margin: 0 1%;
-}
-
+/* Responsive Styles for Smaller Screens */
 @media (max-width: 720px) {
   .footer {
-    text-align: left;
-    padding: 5%;
+    padding: 10px;
   }
 
-  .footer .row ul li {
-    display: block;
-    margin: 10px 0;
-    text-align: center;
+  .footer .row {
+    flex-direction: row; /* Stack icons in a single row */
+    gap: 15px; /* Reduce gap for smaller screens */
   }
 
-  .footer .row a i {
-    margin: 1% 3%;
+  .footer .row a {
+    width: 40px; /* Smaller icons for mobile */
+    height: 40px;
+  }
+
+  .footer .row a svg {
+    height: 20px; /* Adjust icon size for mobile */
   }
 }
 
-/* Parallax Effect */
+/* Footer Links */
+.footer .footer-links {
+  margin-top: 0px; /* Adds spacing between icons and links */
+  padding: 10px 0; /* Adds padding for better spacing */
+}
+
+.footer .footer-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Adds spacing between links */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Removes default list styling */
+}
+
+.footer .footer-links ul li a {
+  color: #f2f2f2; /* Light text color for readability */
+  text-decoration: none; /* Removes underline */
+  font-size: 0.9em; /* Adjusts font size */
+  transition: color 0.3s; /* Smooth color transition */
+  background-color: transparent; /* Removes background color */
+  border-radius: 0; /* Removes border radius */
+  width: auto; /* Adjusts width to fit content */
+  height: auto; /* Adjusts height to fit content */
+  padding: 5px 10px; /* Adds padding for better click area */
+}
+
+.footer .footer-links ul li a:hover {
+  color: #ffa726; /* Amber color on hover */
+  background-color: #292929; /* Subtle background color on hover */
+  border-radius: 5px; /* Slightly rounded corners on hover */
+}
+
+/* Footer Copyright */
+.footer .footer-copyright {
+  margin-top: 0px; /* Adds spacing between links and copyright */
+  padding: 10px 0; /* Adds padding for better spacing */
+  font-size: 0.8em; /* Smaller font size for copyright */
+  color: #a0a0a0; /* Subtle gray color for copyright text */
+}
+
+/* Responsive Styles for Footer Links and Copyright */
+@media (max-width: 720px) {
+  .footer .footer-links ul {
+    flex-direction: column; /* Stacks links vertically on smaller screens */
+    gap: 10px; /* Reduces gap between links */
+  }
+
+  .footer .footer-links ul li a {
+    font-size: 0.8em; /* Smaller font size for mobile */
+  }
+
+  .footer .footer-copyright {
+    font-size: 0.7em; /* Smaller font size for mobile */
+  }
+}
+
 .parallax {
   background: url('your-image.jpg') no-repeat center center fixed;
   background-size: cover;
