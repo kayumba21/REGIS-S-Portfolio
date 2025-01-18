@@ -1,8 +1,7 @@
 /* General Styles */
 .links li a {
     color: #F2F2F2; /* Set the text color to white */
- /* Remove underline from links */
-}
+    text-decoration: none; /* Remove underline from links */
 }
 .links li a:hover {
     color: #ffa726; /* Amber color on hover */
@@ -11,7 +10,7 @@
 /* This will make only the "Get Started" link text white */
 #getstarted a {
     color: #F2F2F2;
-  background color: #F2F2F2;
+    background-color: #F2F2F2;
 }
 
 
