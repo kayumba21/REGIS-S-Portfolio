@@ -1,41 +1,50 @@
-// Get all project images
-const projectImages = document.querySelectorAll('.project-image');
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('.links');
 
-// Add click event listener to each image
-projectImages.forEach(image => {
-  image.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent the default link behavior
+  menuToggle.addEventListener('click', function() {
+    links.classList.toggle('active');
+  });
 
-    // Get the parent card element
-    const card = image.closest('.card');
+  // Get all project images
+  const projectImages = document.querySelectorAll('.project-image');
 
-    // Get the description and technologies
-    const description = card.getAttribute('data-description');
-    const technologies = card.getAttribute('data-tech');
+  // Add click event listener to each image
+  projectImages.forEach(image => {
+    image.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default link behavior
 
-    // Create a lightbox container
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox active';
+      // Get the parent card element
+      const card = image.closest('.card');
 
-    // Create an image element for the clicked image
-    const lightboxImage = document.createElement('img');
-    lightboxImage.src = image.src;
+      // Get the description and technologies
+      const description = card.getAttribute('data-description');
+      const technologies = card.getAttribute('data-tech');
 
-    // Create a description element
-    const lightboxDescription = document.createElement('div');
-    lightboxDescription.className = 'lightbox-description';
-    lightboxDescription.innerHTML = `<strong>Description:</strong> ${description}<br><strong>Technologies:</strong> ${technologies}`;
+      // Create a lightbox container
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox active';
 
-    // Add the image and description to the lightbox
-    lightbox.appendChild(lightboxImage);
-    lightbox.appendChild(lightboxDescription);
+      // Create an image element for the clicked image
+      const lightboxImage = document.createElement('img');
+      lightboxImage.src = image.src;
 
-    // Add the lightbox to the body
-    document.body.appendChild(lightbox);
+      // Create a description element
+      const lightboxDescription = document.createElement('div');
+      lightboxDescription.className = 'lightbox-description';
+      lightboxDescription.innerHTML = `<strong>Description:</strong> ${description}<br><strong>Technologies:</strong> ${technologies}`;
 
-    // Remove the lightbox when clicked outside of the image
-    lightbox.addEventListener('click', () => {
-      document.body.removeChild(lightbox);
+      // Add the image and description to the lightbox
+      lightbox.appendChild(lightboxImage);
+      lightbox.appendChild(lightboxDescription);
+
+      // Add the lightbox to the body
+      document.body.appendChild(lightbox);
+
+      // Remove the lightbox when clicked outside of the image
+      lightbox.addEventListener('click', () => {
+        document.body.removeChild(lightbox);
+      });
     });
   });
 });
