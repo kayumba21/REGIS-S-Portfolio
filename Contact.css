@@ -1,7 +1,9 @@
+/* Logo Styles */
 #logo {
   width: 150px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
+
 /* General Link Styles */
 .links li a {
   color: #f2f2f2; /* Light text color for readability */
@@ -30,13 +32,6 @@
   transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
 }
 
-/* This will make only the "Get Started" link text white */
-#getstarted a {
-    color: #F2F2F2;
-  background color: #F2F2F2;
-}
-
-
 body {
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
@@ -45,26 +40,24 @@ body {
   animation: gradientAnimation 15s ease infinite;
   text-align: left;
 }
+
 a {
   text-decoration: none;
 }
-a:hover {
-  color: #ffa726; /* Amber color on hover */
-}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
-
 }
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-   background: linear-gradient(45deg, #1e1e24, #2a2a35, #1e1e24);
+  background: linear-gradient(45deg, #1e1e24, #2a2a35, #1e1e24);
 }
-
 
 /* Start Landing Page */
 .landing-page header {
@@ -72,10 +65,10 @@ ul {
   display: flex;
 }
 
-  .landing-page header {
-    min-height: auto;
-    display: initial;
-  }
+.landing-page header {
+  min-height: auto;
+  display: initial;
+}
 
 .landing-page header .container {
   display: flex;
@@ -102,6 +95,7 @@ ul {
   cursor: pointer;
   transition: .3s;
 }
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 10px;
@@ -111,8 +105,8 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-
 }
+
 input[type=submit] {
   border: 0;
   border-radius: 20px;
@@ -122,15 +116,18 @@ input[type=submit] {
   color: #F2F2F2;
   background-color: #424A59;
 }
+
 .container {
   border-radius: 5px;
   background-color: #262523;
   padding: 20px;
   color: #F2F2F2;
 }
+
 .image grid {
-margin: flex;
+  margin: flex;
 }
+
 .landing-page header .links li:last-child {
   border-radius: 20px;
   padding: 10px 20px;
@@ -156,9 +153,11 @@ margin: flex;
   color: #F2F2F2;
   background-color: #424A59;
 }
+
 .landing-page .content .image img {
-  max-width:  700px;
+  max-width: 700px;
 }
+
 /* General Footer Styles */
 .footer {
   background-color: #1e1e24; /* Dark background for contrast */
@@ -221,6 +220,33 @@ margin: flex;
   .footer .row a svg {
     height: 20px; /* Adjust icon size for mobile */
   }
+
+  /* Hide the image on mobile devices */
+  .collaborative-image {
+    display: none;
+  }
+
+  /* Make form fields fit well on mobile devices */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .landing-page .content .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .landing-page .content .info {
+    width: 100%;
+  }
 }
 
 /* Footer Links */
@@ -277,5 +303,54 @@ margin: flex;
 
   .footer .footer-copyright {
     font-size: 0.7em; /* Smaller font size for mobile */
+  }
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .landing-page header .links {
+    display: none;
+    flex-direction: column;
+    width: 200px; /* Adjust the width as needed */
+    background-color: #1e1e24;
+    position: absolute;
+    top: 50px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .landing-page header .links.active {
+    display: flex;
+  }
+
+  .landing-page header .links li {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #292929;
+  }
+
+  .landing-page header .links li:last-child {
+    border-bottom: none;
   }
 }
