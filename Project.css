@@ -315,11 +315,6 @@ input[type=submit] {
   .footer .row a svg {
     height: 20px; /* Adjust icon size for mobile */
   }
-
-  /* Hide images on mobile screens */
-  .project-image {
-    display: none;
-  }
 }
 
 /* Footer Links */
@@ -410,4 +405,53 @@ input[type=submit] {
 #getstarted a {
   color: #f2f2f2;
   background-color: #424A59;
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .landing-page header .links {
+    display: none;
+    flex-direction: column;
+    width: 200px; /* Adjust the width as needed */
+    background-color: #1e1e24;
+    position: absolute;
+    top: 50px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .landing-page header .links.active {
+    display: flex;
+  }
+
+  .landing-page header .links li {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #292929;
+  }
+
+  .landing-page header .links li:last-child {
+    border-bottom: none;
+  }
 }
