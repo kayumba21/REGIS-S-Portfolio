@@ -315,6 +315,11 @@ input[type=submit] {
   .footer .row a svg {
     height: 20px; /* Adjust icon size for mobile */
   }
+
+  /* Hide images on mobile screens */
+  .project-image {
+    display: none;
+  }
 }
 
 /* Footer Links */
